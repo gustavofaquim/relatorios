@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="LyceumDs">
+      <DataSourceReference>/Data Sources/LyceumDS</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>01a3f0bc-35ee-467e-9144-cb0c522512b7</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsALun">
+      <Query>
+        <DataSourceName>LyceumDs</DataSourceName>
+        <CommandText>SELECT A.ALUNO, A.NOME_COMPL, CC.CURSO, CC.ANO_ENCERRAMENTO AS ANO, CC.SEM_ENCERRAMENTO AS SEM, C.NOME FROM LY_H_CURSOS_CONCL CC
+INNER JOIN LY_ALUNO A ON CC.ALUNO = A.ALUNO
+INNER JOIN LY_CURSO C ON CC.CURSO = C.CURSO</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ALUNO">
+          <DataField>ALUNO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOME_COMPL">
+          <DataField>NOME_COMPL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CURSO">
+          <DataField>CURSO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ANO">
+          <DataField>ANO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="SEM">
+          <DataField>SEM</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="NOME">
+          <DataField>NOME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!ALUNO.Value</FilterExpression>
+          <Operator>Equal</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!p_aluno.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Anápolis/</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Format(Globals!ExecutionTime, "dd/MM/yyyy")</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Ao</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Dr. Carlos Hassel Mendes</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Magnífico Reitor da Universidade Evangélica de Goiás</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Anápolis-GO</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Magnífico Reitor,</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Atesto para os devidos fins de direito a regularidade e responsabilidade dos procedimentos realizados pela Faculdade Evangélica Raízes para a expedição do Diploma do(a) estudante abaixo identificado(a), na forma da legislação vigente , e o encaminho para ser registrado:</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Concluinte:  </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!NOME_COMPL.Value, "dsALun")</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Curso: </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!CURSO.Value, "dsALun") &amp; " - " &amp; First(Fields!NOME.Value, "dsALun")</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Ano/Semestre de conclusão: </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!ANO.Value, "dsALun") &amp; "/" &amp; First(Fields!SEM.Value, "dsALun")</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Respeitosamente</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Leonardo Rodrigues de Souza</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Diretor-Geral</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>10.02242mm</Top>
+            <Left>16.90158mm</Left>
+            <Height>122.15208mm</Height>
+            <Width>155.96875mm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>14.24833cm</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>18.80396cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>23.96408mm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="logoraizes">
+              <Source>Embedded</Source>
+              <Value>tcheneRaizes</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.73766cm</Top>
+              <Left>6.71724cm</Left>
+              <Height>1.12958cm</Height>
+              <Width>3.90771cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>11.43mm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="p_aluno">
+      <DataType>String</DataType>
+      <Prompt>Aluno</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>= "REPORTSERVER"</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>usuario</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>p_aluno</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>usuario</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logoaeefundo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="tcheneRaizes">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportServerUrl>http://birdbox:8045/ReportServer</rd:ReportServerUrl>
+  <rd:ReportID>14fcd950-8943-4f6b-8a98-8362a50f4c7c</rd:ReportID>
+</Report>

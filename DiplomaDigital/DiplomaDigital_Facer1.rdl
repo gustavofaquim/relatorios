@@ -1054,6 +1054,10 @@
           <DataField>CARGO_ASSINADOR02</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="NOME_ASSINADOR_REGISTRADORA01">
+          <DataField>NOME_ASSINADOR_REGISTRADORA01</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="CURSO_TIPO">
           <DataField>CURSO_TIPO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1062,16 +1066,8 @@
           <DataField>CURSO_NUM</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="NOME_ASSINADOR_REGISTRADORA01">
-          <DataField>NOME_ASSINADOR_REGISTRADORA01</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="CARGO_ASSINADOR_REGISTRADORA01">
           <DataField>CARGO_ASSINADOR_REGISTRADORA01</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CURSO_TRAMIT_RECONHECIMENTO">
-          <DataField>CURSO_TRAMIT_RECONHECIMENTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CURSO_DATA">
@@ -1096,6 +1092,10 @@
         </Field>
         <Field Name="CURSO_PORTARIA">
           <DataField>CURSO_PORTARIA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CURSO_TRAMIT_RECONHECIMENTO">
+          <DataField>CURSO_TRAMIT_RECONHECIMENTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CURSO_PAGINA_PUBLIC">
@@ -1409,7 +1409,39 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>O Reitor da </Value>
+                        <Value>O </Value>
+                        <Style>
+                          <FontFamily>Verdana</FontFamily>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!CARGO_ASSINADOR02.Value, "dsCertificadoPos")</Value>
+                        <Style>
+                          <FontFamily>Verdana</FontFamily>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value xml:space="preserve"> </Value>
+                        <Style>
+                          <FontFamily>Verdana</FontFamily>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>da</Value>
+                        <Style>
+                          <FontFamily>Verdana</FontFamily>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Normal</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value xml:space="preserve"> </Value>
                         <Style>
                           <FontFamily>Verdana</FontFamily>
                           <FontSize>9pt</FontSize>
@@ -1502,21 +1534,6 @@
                           <FontFamily>Verdana</FontFamily>
                           <FontSize>9pt</FontSize>
                           <FontWeight>Normal</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Center</TextAlign>
-                    </Style>
-                  </Paragraph>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value />
-                        <Style>
-                          <FontFamily>Verdana</FontFamily>
-                          <FontSize>16pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -1794,11 +1811,95 @@
               </Border>
               <BackgroundImage>
                 <Source>External</Source>
-                <Value>/Lyceum/imagens/diploma/DiplomaUnievangelica.jpg</Value>
+                <Value>/Lyceum/imagens/diploma/DiplomaRubiataba.jpg</Value>
                 <BackgroundRepeat>RepeatX</BackgroundRepeat>
               </BackgroundImage>
             </Style>
           </Rectangle>
+          <Textbox Name="info_qr_code">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!ALUNO_NOME.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> - CPF: </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!ALUNO_CPF.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Verificar autenticidade do documento pelo site: </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!URL_SISTEMA_CONSULTA_MONTADO.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>21.71912cm</Top>
+            <Left>26.15448cm</Left>
+            <Height>14.80812cm</Height>
+            <Width>1.67979cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <WritingMode>Rotate270</WritingMode>
+            </Style>
+          </Textbox>
+          <Image Name="QR_Code">
+            <Source>Database</Source>
+            <Value>=Code.QRCoderByteArray(First(Fields!URL_SISTEMA_CONSULTA_MONTADO.Value, "dsCertificadoPos"))</Value>
+            <MIMEType>image/png</MIMEType>
+            <Sizing>Fit</Sizing>
+            <Top>36.98557cm</Top>
+            <Left>25.58292cm</Left>
+            <Height>2.76958cm</Height>
+            <Width>2.82292cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
           <Textbox Name="infos_verso">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -1878,77 +1979,14 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> pela Portaria nº </Value>
+                    <Value> pela </Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
                       <FontSize>9pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_NUM.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, de </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_DATA_CREDENC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, DOU: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_DATA_PUBLIC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, Seção </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_SECAO_PUBLIC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, Pág. </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_PAGINA_PUBLIC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>.</Value>
+                    <Value>=First(Fields!IES_EMISSORA_PORTARIA.Value, "dsCertificadoPos")</Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -2037,215 +2075,6 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!CURSO_TRAMIT_RECONHECIMENTO.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!INFO_ADICIONAIS.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Diploma registrado sob o nº </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO_NUMERO_REGISTRO.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, Livro </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, fls. </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO_NUM_FOLHA_DIPLOMA.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, em </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO_DATA_REGISTRO_DIPLOMA.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, por delegação de competência do Ministério da Educação, nos termos da Lei nº 9.394, de 20 de dezembro de 1996, e do Decreto nº 9.235, de 15 de dezembro de 2017.</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Processo nº </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO_PROCESSO_DIPLOMA.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>.</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!IES_REGISTRADORA_END_NOME_MUNICIPIO.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO_DATA_EXPED_DIPLOMA_EXT.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>.</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
                     <Value />
                     <Style>
                       <FontFamily>Verdana</FontFamily>
@@ -2307,450 +2136,26 @@
                   <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontStyle>Italic</FontStyle>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Original Assinado Segundo a Portaria 554/2019/MEC </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO_RESP_REGISTRO_NOME.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Assistente de Expedição e Registro de Diploma</Value>
-                    <Style>
-                      <FontStyle>Italic</FontStyle>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
             </Paragraphs>
-            <Top>22.80391cm</Top>
-            <Left>1.21391cm</Left>
-            <Height>9.83396cm</Height>
+            <Top>21.71912cm</Top>
+            <Left>0.87841cm</Left>
+            <Height>5.23021cm</Height>
             <Width>14.02609cm</Width>
-            <ZIndex>1</ZIndex>
-            <Visibility>
-              <Hidden>=IIf(First(Fields!SEGUNDA_VIA.Value, "dsCertificadoPos") = "S", False, True)</Hidden>
-            </Visibility>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="info_qr_code">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!ALUNO_NOME.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> - CPF: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!ALUNO_CPF.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Verificar autenticidade do documento pelo site: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!URL_SISTEMA_CONSULTA_MONTADO.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontStyle>Italic</FontStyle>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>8pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <Top>22.80391cm</Top>
-            <Left>26.15448cm</Left>
-            <Height>10.91875cm</Height>
-            <Width>1.67979cm</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-              <WritingMode>Rotate270</WritingMode>
-            </Style>
-          </Textbox>
-          <Image Name="QR_Code">
-            <Source>Database</Source>
-            <Value>=Code.QRCoderByteArray(First(Fields!URL_SISTEMA_CONSULTA_MONTADO.Value, "dsCertificadoPos"))</Value>
-            <MIMEType>image/png</MIMEType>
-            <Sizing>Fit</Sizing>
-            <Top>34.15453cm</Top>
-            <Left>25.58292cm</Left>
-            <Height>2.76958cm</Height>
-            <Width>2.82292cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
-                <Style>None</Style>
+                <Style>Solid</Style>
               </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Image>
-          <Textbox Name="infos_verso2">
+          </Textbox>
+          <Textbox Name="Textbox4">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_MANTENEDORA_RAZAO_SOCIAL.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>CNPJ: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_MANTENEDORA_CNPJ.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_NOME.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!TIPO_POR_EMISSORA.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> pela Portaria nº </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_NUM.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, de </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_DATA_CREDENC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, DOU: </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_DATA_PUBLIC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, Seção </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_SECAO_PUBLIC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>, Pág. </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!IES_EMISSORA_PAGINA_PUBLIC.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>.</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!CURSO_NOME.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!TIPO_POR_CURSO.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> pela</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value xml:space="preserve"> </Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=First(Fields!CURSO_PORTARIA.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>.</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!CURSO_TRAMIT_RECONHECIMENTO.Value, "dsCertificadoPos")</Value>
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
@@ -2810,6 +2215,94 @@
                     </Style>
                   </TextRun>
                   <TextRun>
+                    <Value>,  pela </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!IES_REGISTRADORA_NOME.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>, Credenciada pela Portaria nº </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!IES_REGISTRADORA_NUM.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>, de </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!IES_REGISTRADORA_DATA_CREDENC.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>, DOU: </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!IES_REGISTRADORA_DATA_PUBLIC_CREDENC.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>, Seção </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!IES_REGISTRADORA_SECAO_PUBLIC_CREDENC.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>, Pág. </Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!IES_REGISTRADORA_PAGINA_PUBLIC_CREDENC.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
                     <Value>, por delegação de competência do Ministério da Educação, nos termos da Lei nº 9.394, de 20 de dezembro de 1996, e do Decreto nº 9.235, de 15 de dezembro de 2017.</Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
@@ -2817,9 +2310,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -2920,14 +2411,11 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Original Assinado Segundo a Portaria 554/2019/MEC</Value>
+                    <Value>Original Assinado Segundo a Portaria 554/2019/MEC </Value>
                     <Style>
-                      <FontStyle>Normal</FontStyle>
                       <FontFamily>Verdana</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2938,7 +2426,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!NOME_ASSINADOR01.Value, "dsCertificadoPos")</Value>
+                    <Value>=First(Fields!NOME_ASSINADOR_REGISTRADORA02.Value, "dsCertificadoPos")</Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -2953,7 +2441,16 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!CARGO_ASSINADOR01.Value, "dsCertificadoPos")</Value>
+                    <Value>=First(Fields!CARGO_ASSINADOR_REGISTRADORA02.Value, "dsCertificadoPos")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> - UniEVANGÉLICA</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
                       <FontFamily>Verdana</FontFamily>
@@ -3028,34 +2525,37 @@
                   <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontFamily>Verdana</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
             </Paragraphs>
-            <Top>22.80391cm</Top>
-            <Left>1.21391cm</Left>
-            <Height>9.83396cm</Height>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>27.83099cm</Top>
+            <Left>0.87841cm</Left>
+            <Height>6.32354cm</Height>
             <Width>14.02609cm</Width>
             <ZIndex>4</ZIndex>
-            <Visibility>
-              <Hidden>=IIf(First(Fields!SEGUNDA_VIA.Value, "dsCertificadoPos") = "N", False, True)</Hidden>
-            </Visibility>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </RightBorder>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
