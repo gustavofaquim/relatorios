@@ -19,6 +19,9 @@
           <QueryParameter Name="@unidade">
             <Value>=Parameters!unidade.Value</Value>
           </QueryParameter>
+          <QueryParameter Name="@curso">
+            <Value>=Parameters!curso.Value</Value>
+          </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
         <CommandText>Relat_NG_Total_Servicos</CommandText>
@@ -953,8 +956,8 @@ WHERE CHAVE = 42</CommandText>
             <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <RepeatRowHeaders>true</RepeatRowHeaders>
             <DataSetName>dsServicos_totalizados</DataSetName>
-            <Top>1.85058in</Top>
-            <Left>0.3244in</Left>
+            <Top>0.55891in</Top>
+            <Left>0.47023in</Left>
             <Height>0.93414in</Height>
             <Width>6.0769in</Width>
             <Style>
@@ -963,47 +966,72 @@ WHERE CHAVE = 42</CommandText>
               </Border>
             </Style>
           </Tablix>
-          <Image Name="logo">
-            <Source>Database</Source>
-            <Value>=First(Fields!IMAGEM_LOGO.Value, "dsImagem")</Value>
-            <MIMEType>image/jpeg</MIMEType>
-            <Sizing>Fit</Sizing>
-            <Top>0.31944in</Top>
-            <Left>5.02281in</Left>
-            <Height>0.79167in</Height>
-            <Width>2.05509in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Image>
-          <Textbox Name="Textbox1">
+          <Textbox Name="Textbox6">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Total de Serviços Solicitados</Value>
+                    <Value>Unidade:</Value>
                     <Style>
-                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!unidade.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">   </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>Ano:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!ano.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>Curso:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!curso.Value</Value>
+                    <Style />
+                  </TextRun>
                 </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.18056in</Top>
-            <Left>4.5164in</Left>
-            <Height>0.25in</Height>
-            <Width>3.06791in</Width>
-            <ZIndex>2</ZIndex>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>0.3937cm</Top>
+            <Left>1.19439cm</Left>
+            <Height>0.6cm</Height>
+            <Width>14.9131cm</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1020,6 +1048,68 @@ WHERE CHAVE = 42</CommandText>
       </Body>
       <Width>19.51354cm</Width>
       <Page>
+        <PageHeader>
+          <Height>2.91042cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="logo">
+              <Source>Database</Source>
+              <Value>=First(Fields!IMAGEM_LOGO.Value, "dsImagem")</Value>
+              <MIMEType>image/jpeg</MIMEType>
+              <Sizing>Fit</Sizing>
+              <Top>0.13889in</Top>
+              <Left>0.3244in</Left>
+              <Height>0.79167in</Height>
+              <Width>2.05509in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Total de Serviços Solicitados</Value>
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.45139in</Top>
+              <Left>2.85422in</Left>
+              <Height>0.25in</Height>
+              <Width>3.06791in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
         <PageHeight>21cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
         <TopMargin>0.5cm</TopMargin>
@@ -1067,11 +1157,17 @@ WHERE CHAVE = 42</CommandText>
       <Prompt>documento</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>
+    <ReportParameter Name="curso">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>curso</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>3</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -1092,6 +1188,11 @@ WHERE CHAVE = 42</CommandText>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>documento</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>curso</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

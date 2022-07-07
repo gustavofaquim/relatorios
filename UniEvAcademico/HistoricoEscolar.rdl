@@ -1521,17 +1521,6 @@
                 </TextRuns>
                 <Style />
               </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Obs.: Disciplinas com situação AC e AE não se informa Docente/Titulação</Value>
-                    <Style>
-                      <FontSize>7pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox123</rd:DefaultName>
             <Top>8.02858cm</Top>
@@ -1783,7 +1772,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Nome</Value>
+                      <Value> Nome</Value>
                       <Style>
                         <FontSize>7pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1798,6 +1787,13 @@
                     </TextRun>
                     <TextRun>
                       <Value>=First(Fields!NOME_ALUNO.Value, "dsHistEscolar2")</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
                       <Style>
                         <FontSize>7pt</FontSize>
                         <FontWeight>Normal</FontWeight>
@@ -1877,9 +1873,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox119</rd:DefaultName>
-              <Top>2.2126cm</Top>
+              <Top>2.20489cm</Top>
               <Left>14.11696cm</Left>
-              <Height>0.48975cm</Height>
+              <Height>0.48424cm</Height>
               <Width>4.92308cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -2075,9 +2071,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox136</rd:DefaultName>
               <Top>2.73763cm</Top>
-              <Left>12.07566cm</Left>
+              <Left>12.04038cm</Left>
               <Height>0.56472cm</Height>
-              <Width>6.96438cm</Width>
+              <Width>6.99966cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -2161,7 +2157,7 @@
                       </Style>
                     </TextRun>
                     <TextRun>
-                      <Value xml:space="preserve">                 </Value>
+                      <Value xml:space="preserve"> </Value>
                       <Style>
                         <FontSize>7pt</FontSize>
                       </Style>
@@ -2171,7 +2167,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox151</rd:DefaultName>
-              <Top>2.22803cm</Top>
+              <Top>2.23024cm</Top>
               <Left>4.22208cm</Left>
               <Height>0.45889cm</Height>
               <Width>6.8132cm</Width>
@@ -2238,10 +2234,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox154</rd:DefaultName>
-              <Top>2.2126cm</Top>
+              <Top>2.22032cm</Top>
               <Left>11.10584cm</Left>
-              <Height>0.47432cm</Height>
-              <Width>2.83473cm</Width>
+              <Height>0.46881cm</Height>
+              <Width>2.97584cm</Width>
               <ZIndex>7</ZIndex>
               <Style>
                 <Border>
@@ -2373,72 +2369,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox161</rd:DefaultName>
               <Top>3.76707cm</Top>
-              <Left>11.69234cm</Left>
+              <Left>11.65706cm</Left>
               <Height>0.6cm</Height>
               <Width>2.35407cm</Width>
               <ZIndex>9</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                  <Width>0.25pt</Width>
-                </Border>
-                <TopBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>0.25pt</Width>
-                </TopBorder>
-                <BottomBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>0.25pt</Width>
-                </BottomBorder>
-                <LeftBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>0.25pt</Width>
-                </LeftBorder>
-                <RightBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>0.25pt</Width>
-                </RightBorder>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox164">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Matriz: </Value>
-                      <Style>
-                        <FontSize>7pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=First(Fields!CURRICULO.Value, "dsHistEscolar2")</Value>
-                      <Style>
-                        <FontSize>7pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox164</rd:DefaultName>
-              <Top>3.76707cm</Top>
-              <Left>14.11696cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.59476cm</Width>
-              <ZIndex>10</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2503,7 +2437,7 @@
               <Left>0.09929cm</Left>
               <Height>0.38833cm</Height>
               <Width>18.95225cm</Width>
-              <ZIndex>11</ZIndex>
+              <ZIndex>10</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2589,7 +2523,7 @@
               <Left>0.09929cm</Left>
               <Height>0.43369cm</Height>
               <Width>18.95225cm</Width>
-              <ZIndex>12</ZIndex>
+              <ZIndex>11</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2650,7 +2584,7 @@
               <Left>0.09929cm</Left>
               <Height>0.6cm</Height>
               <Width>5.66134cm</Width>
-              <ZIndex>13</ZIndex>
+              <ZIndex>12</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2720,7 +2654,7 @@
               <Left>5.83119cm</Left>
               <Height>0.6cm</Height>
               <Width>4.02964cm</Width>
-              <ZIndex>14</ZIndex>
+              <ZIndex>13</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2788,7 +2722,7 @@
               <Left>9.93138cm</Left>
               <Height>0.6cm</Height>
               <Width>4.36783cm</Width>
-              <ZIndex>15</ZIndex>
+              <ZIndex>14</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2852,10 +2786,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox182</rd:DefaultName>
               <Top>1.71182cm</Top>
-              <Left>15.93161cm</Left>
+              <Left>15.80078cm</Left>
               <Height>0.44786cm</Height>
-              <Width>3.10843cm</Width>
-              <ZIndex>16</ZIndex>
+              <Width>3.23926cm</Width>
+              <ZIndex>15</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2923,7 +2857,7 @@
               <Left>14.36977cm</Left>
               <Height>0.6cm</Height>
               <Width>4.68177cm</Width>
-              <ZIndex>17</ZIndex>
+              <ZIndex>16</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2990,7 +2924,7 @@
               <Left>0.09929cm</Left>
               <Height>0.6cm</Height>
               <Width>5.66134cm</Width>
-              <ZIndex>18</ZIndex>
+              <ZIndex>17</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -3052,7 +2986,7 @@
               <Left>5.83119cm</Left>
               <Height>0.6cm</Height>
               <Width>5.88155cm</Width>
-              <ZIndex>19</ZIndex>
+              <ZIndex>18</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -3109,7 +3043,7 @@
               <Left>4.22208cm</Left>
               <Height>0.53528cm</Height>
               <Width>14.82946cm</Width>
-              <ZIndex>20</ZIndex>
+              <ZIndex>19</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3146,7 +3080,7 @@
               <Left>4.22208cm</Left>
               <Height>0.39417cm</Height>
               <Width>14.82946cm</Width>
-              <ZIndex>21</ZIndex>
+              <ZIndex>20</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3183,12 +3117,79 @@
               <Left>0.09929cm</Left>
               <Height>0.5cm</Height>
               <Width>18.95225cm</Width>
-              <ZIndex>22</ZIndex>
+              <ZIndex>21</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
                 <BackgroundColor>LightGrey</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox162">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Semestre:</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=First(Fields!SEM_INGRESSO.Value, "dsHistEscolar2")</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox161</rd:DefaultName>
+              <Top>3.76707cm</Top>
+              <Left>14.08169cm</Left>
+              <Height>0.6cm</Height>
+              <Width>1.98289cm</Width>
+              <ZIndex>22</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                  <Width>0.25pt</Width>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>0.25pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>0.25pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>0.25pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>0.25pt</Width>
+                </RightBorder>
                 <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
