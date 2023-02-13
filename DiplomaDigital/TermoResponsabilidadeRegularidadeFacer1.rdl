@@ -15,7 +15,8 @@
         <DataSourceName>LyceumDs</DataSourceName>
         <CommandText>SELECT A.ALUNO, A.NOME_COMPL, CC.CURSO, CC.ANO_ENCERRAMENTO AS ANO, CC.SEM_ENCERRAMENTO AS SEM, C.NOME FROM LY_H_CURSOS_CONCL CC
 INNER JOIN LY_ALUNO A ON CC.ALUNO = A.ALUNO
-INNER JOIN LY_CURSO C ON CC.CURSO = C.CURSO</CommandText>
+INNER JOIN LY_CURSO C ON CC.CURSO = C.CURSO
+WHERE CC.MOTIVO = 'Conclusao'</CommandText>
       </Query>
       <Fields>
         <Field Name="ALUNO">

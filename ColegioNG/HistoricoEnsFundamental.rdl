@@ -1557,7 +1557,7 @@ IIf(First(Fields!UNIDADE.Value, "dsHistoricoEnsFundamental") = "COLÉGIO COUTO M
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsHistoricoEnsFundamental</DataSetName>
-            <Top>10.78563cm</Top>
+            <Top>9.35688cm</Top>
             <Left>0.7512cm</Left>
             <Height>1.2cm</Height>
             <Width>17.59376cm</Width>
@@ -2241,6 +2241,41 @@ IIf(First(Fields!UNIDADE.Value, "dsHistoricoEnsFundamental") = "COLÉGIO COUTO M
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>"Estejam alertas, fiquem firmes na fé, sejam corajosos, sejam fortes"  - Coríntios 16:13</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>11.20997cm</Top>
+            <Left>0.7512cm</Left>
+            <Height>0.6cm</Height>
+            <Width>17.59376cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>12.50209cm</Height>
         <Style>
@@ -2841,6 +2876,6 @@ bHzl5eVHjx4tKCgoLi5uaWkxm809e/bs1avXkCFDwE/S4/oVXMTCllpXVwcUKi4YVqsVWhAEobi4WP05
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportServerUrl>http://birdbox:8045/ReportServer</rd:ReportServerUrl>
+  <rd:ReportServerUrl>http://172.16.16.100:8045/ReportServer</rd:ReportServerUrl>
   <rd:ReportID>b6c0d5a8-5bc8-4d44-973d-7cb78e654df5</rd:ReportID>
 </Report>

@@ -4,7 +4,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="LyceumDsTeste">
-      <DataSourceReference>/Data Sources/LyceumDS_Teste</DataSourceReference>
+      <DataSourceReference>/Data Sources/LyceumDS</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>09306f4b-088e-4e83-be52-67ef0efe03a9</rd:DataSourceID>
     </DataSource>
@@ -1803,7 +1803,7 @@
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Height>21cm</Height>
+            <Height>20.94708cm</Height>
             <Width>29.7cm</Width>
             <Style>
               <Border>
@@ -1811,7 +1811,7 @@
               </Border>
               <BackgroundImage>
                 <Source>External</Source>
-                <Value>/Lyceum/imagens/diploma/DiplomaFaego.jpg</Value>
+                <Value>/Lyceum/imagens/diploma/DiplomaFAEGO.jpg</Value>
                 <BackgroundRepeat>RepeatX</BackgroundRepeat>
               </BackgroundImage>
             </Style>
@@ -2497,7 +2497,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!LIVRO_REGISTRO_RESP_REGISTRO_NOME.Value, "dsCertificadoPos")</Value>
+                    <Value>=First(Fields!NOME_ASSINADOR_REGISTRADORA01.Value, "dsCertificadoPos")</Value>
                     <Style>
                       <FontFamily>Verdana</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -2512,7 +2512,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Assistente de Expedição e Registro de Diploma</Value>
+                    <Value>=First(Fields!CARGO_ASSINADOR_REGISTRADORA01.Value, "dsCertificadoPos")</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
                       <FontFamily>Verdana</FontFamily>

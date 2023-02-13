@@ -2630,6 +2630,6 @@ End Function</Code>
     <CodeModule>QRCoderImageToByteArray, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3016ec4525f0585e</CodeModule>
   </CodeModules>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportServerUrl>http://birdbox:8045/ReportServer</rd:ReportServerUrl>
+  <rd:ReportServerUrl>http://172.16.16.100:8045/ReportServer</rd:ReportServerUrl>
   <rd:ReportID>579574dd-af36-48b1-8e03-c2d11209e6b9</rd:ReportID>
 </Report>

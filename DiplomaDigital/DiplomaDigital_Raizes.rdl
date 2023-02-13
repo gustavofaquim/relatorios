@@ -4,7 +4,7 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="LyceumDsTeste">
-      <DataSourceReference>/Data Sources/LyceumDS_Teste</DataSourceReference>
+      <DataSourceReference>/Data Sources/LyceumDS</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>09306f4b-088e-4e83-be52-67ef0efe03a9</rd:DataSourceID>
     </DataSource>
@@ -157,6 +157,10 @@
         <Field Name="CURSO_COD_EMEC">
           <DataField>CURSO_COD_EMEC</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CURSO_NOME_TITULACAO">
+          <DataField>CURSO_NOME_TITULACAO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CURSO_NOME_HABILITACAO">
           <DataField>CURSO_NOME_HABILITACAO</DataField>
@@ -1078,6 +1082,10 @@
           <DataField>CARGO_ASSINADOR_REGISTRADORA02</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CURSO_DIRETRIZ_CURRICULAR">
+          <DataField>CURSO_DIRETRIZ_CURRICULAR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="CURSO_DATA_PUBLIC">
           <DataField>CURSO_DATA_PUBLIC</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1437,7 +1445,7 @@
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value> Curso de </Value>
+                        <Value xml:space="preserve"> </Value>
                         <Style>
                           <FontFamily>Verdana</FontFamily>
                           <FontSize>9pt</FontSize>
@@ -1555,7 +1563,7 @@
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!CURSO_NOME.Value, "dsCertificadoPos")</Value>
+                        <Value>=First(Fields!CURSO_NOME_TITULACAO.Value, "dsCertificadoPos")</Value>
                         <Style>
                           <FontFamily>Verdana</FontFamily>
                           <FontSize>16pt</FontSize>
